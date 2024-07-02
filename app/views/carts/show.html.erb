@@ -3,7 +3,7 @@
   <header class="page-header">
     <% if enhanced_cart.length == 0 %>
     <h1> Your cart is empty! </h1>
-    <p> Head back to our <a href="/">shop</a> for lovely plants to add to your cart.</p>
+    <p> Head back to our <%= link_to 'shop', root_path %> for lovely plants to add to your cart.</p>
     <% elsif enhanced_cart.length > 0 %>
     <h1>My Cart</h1>
   </header>
