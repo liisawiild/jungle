@@ -1,0 +1,10 @@
+<tr>
+  <td colspan="2"> <%= image_tag product.image.tiny.url %> </td>
+  <td> 
+    <p><%= product.name %> </p>
+    <p> <%= product.description %> </p>
+  </td>
+  <td> <%= humanized_money_with_symbol item[:item_price_cents] / 100.00 %> </td>
+  <td> <%= item[:quantity] %> </td>
+  <td> <%= humanized_money_with_symbol (item[:quantity] * item[:item_price_cents]) / 100.00 %> </td>      
+</tr>
