@@ -20,6 +20,7 @@
 
     <tbody>
       <% @order.line_items.each do |item| %>
+        <%# provide access to the product of each item %>
         <% @product = Product.find_by_id(item[:product_id])%>
         <%# render the _item view for orders %>
         <%= render 'item', product: @product, item: item %>
