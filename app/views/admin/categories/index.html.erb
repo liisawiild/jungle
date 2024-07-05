@@ -5,7 +5,7 @@
   </header>
 
   <div class="well new-button">
-    <%= link_to '+ New Category', [:admin, :categories, :new], class: 'btn btn-info' %>
+    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
 
   <div class="panel panel-default products">
@@ -13,14 +13,12 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th class="number-col">#</th>
           <th>Category</th>
         </tr>
       </thead>
       <tbody>
         <% @categories.each do |category| %>
           <tr>
-            <td><p><%= category.id %></p></td>
             <td><p class="link"><%= link_to category.name, category_path(category.id) %></p></td>
           </tr>
         <% end %>
