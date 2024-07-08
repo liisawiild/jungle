@@ -103,6 +103,13 @@ form.button_to {
     text-transform: uppercase;
     font-style: italic;
   }
+
+  .nav-link {
+    color: grey;
+    &:hover {
+      color: lightgrey;
+    }
+  }
 }
 
 .page-header {
