@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'about/index'
+
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  resources :about, only: [:index]
 
   resource :cart, only: [:show] do
     post   :add_item
@@ -18,6 +19,24 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :show]
   end
+
+  get '/login', to: 'sessions#new'
+  get '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  
+  get '/signup', to: 'users#new'
+  post '/users', to: 'user#create'
+
+  # In the background
+  # GET    /users          -> users#index
+  # GET    /users/new      -> users#new
+  # POST   /users          -> users#create
+  # GET    /users/:id      -> users#show
+  # GET    /users/:id/edit -> users#edit
+  # PATCH  /users/:id      -> users#update
+  # PUT    /users/:id      -> users#update
+  # DELETE /users/:id      -> users#destroy
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
