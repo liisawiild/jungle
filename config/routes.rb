@@ -21,11 +21,11 @@ Rails.application.routes.draw do
   end
 
   get '/login', to: 'sessions#new'
-  get '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   
   get '/signup', to: 'users#new'
-  post '/users', to: 'user#create'
+  post '/users', to: 'users#create'
 
   # In the background
   # GET    /users          -> users#index
